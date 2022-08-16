@@ -1,5 +1,5 @@
 <?php
-$to = 'contact@performance-afrique.cm';
+$to = 'info@sthyc.cm';
 $subject = 'Email de votre site web.';
 $headers = "MIME-Version: 1.0"."\r\n";
 $headers.='Content-type: text/plain; charset: utf-8'."\r\n";
