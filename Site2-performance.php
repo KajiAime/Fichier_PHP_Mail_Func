@@ -10,12 +10,14 @@ $email=filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
 if($email){
     $headers.="Repondez à: $email";
     $message.="Email: ".$_POST['email']."\r\n\r\n";
+    $message.= "Téléphone: ".$_POST['phone']."\r\n\r\n";
+    $message.= "Objet: ".$_POST['objet']."\r\n\r\n";
+    $message.= "Service: ".$_POST['services']."\r\n\r\n";
+    $message.= "Message: ".$_POST['msg'];
+    $sent = mail($to,$subject,$message,$headers,'-f'.$to);
+}else{
+    echo "<h2>L'addresse email est incorrect. S'il vous plait, corrigez l'addresse avant de reessayer.</h2>";
 }
-$message.= "Téléphone: ".$_POST['phone']."\r\n\r\n";
-$message.= "Objet: ".$_POST['objet']."\r\n\r\n";
-$message.= "Service: ".$_POST['services']."\r\n\r\n";
-$message.= "Message: ".$_POST['msg'];
-$sent = mail($to,$subject,$message,$headers,'-f'.$to);
 ?>
 <html>
     <head>
